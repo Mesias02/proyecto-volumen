@@ -1,6 +1,8 @@
 ### 1. Título
 Gestión y persistencia de bases de datos PostgreSQL en contenedores Docker.
-
+---
+![image](https://github.com/user-attachments/assets/3269f058-a3fb-4575-9c9f-a24037815401)
+---
 
 ### 2. Tiempo de duración
 120 minutos.
