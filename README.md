@@ -3,10 +3,9 @@ Gestión y persistencia de bases de datos PostgreSQL en contenedores Docker.
 ---
 ![image](https://github.com/user-attachments/assets/3269f058-a3fb-4575-9c9f-a24037815401)
 ---
-
 ### 2. Tiempo de duración
 120 minutos.
-
+---
 ### 3. Fundamentos
 Docker es una plataforma que permite ejecutar aplicaciones en entornos aislados llamados contenedores. Cada contenedor incluye todo lo necesario para que la aplicación funcione, independientemente de la máquina donde se implemente.
 PostgreSQL, por su parte, es un sistema de gestión de bases de datos relacional. En esta práctica, se utiliza Docker para ejecutar dos instancias de PostgreSQL:
