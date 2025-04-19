@@ -50,9 +50,6 @@ Parte 1: Base de datos sin volumen
 ![image](https://github.com/user-attachments/assets/d5b471db-8963-49c8-9b8f-0c372aabcc76)
 ---
 Paso 1: Crear el contenedor server_db1
----
-![image](https://github.com/user-attachments/assets/2436cdd4-78fb-44b8-b369-dcb0bf64c120)
----
 Ejecuta el siguiente comando en la terminal:
 docker run --name server_db1 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres
 ---
