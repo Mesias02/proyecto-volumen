@@ -185,6 +185,6 @@ SELECT * FROM customer;
 ![image](https://github.com/user-attachments/assets/ae4acb15-791e-4274-b2a4-b95b5b2937ec)
 ---
 10. Bibliografía
-Docker Inc. (n.d.). Docker Documentation. Recuperado de https://docs.docker.com
-PostgreSQL Global Development Group. (n.d.). PostgreSQL Documentation. Recuperado de https://www.postgresql.org/docs/
+Docker Inc. (n.d.). Docker Documentation. ( https://docs.docker.com )
+PostgreSQL Global Development Group. (n.d.). PostgreSQL Documentation. ( https://www.postgresql.org/docs/ )
 
