@@ -67,12 +67,14 @@ Configura herramientas como Powershell para conectarte al contenedor server_db1 
 ![image](https://github.com/user-attachments/assets/11846e82-807e-4063-8395-4516d607e0ad)
 ---
 Paso 3: Crear la base de datos test
+
 En la consola de PostgreSQL o desde el administrador, ejecuta:
 CREATE DATABASE test;
 ---
 ![image](https://github.com/user-attachments/assets/1bbe622b-8c85-405f-be99-86626adcc75b)
 ---
 Paso 4: Crear la tabla customer
+
 Conéctate a la base de datos test:
 \c test
 ---
@@ -88,18 +90,21 @@ CREATE TABLE customer (
 ![image](https://github.com/user-attachments/assets/770456f7-e794-423f-a5f0-c34d499d9bea)
 ---
 Paso 5: Insertar datos
+
 Inserta un registro de prueba:
 INSERT INTO customer (fullname, status) VALUES ('Fausto Saquinaula', 'activo');
 ---
 ![image](https://github.com/user-attachments/assets/96de1133-70d6-4df0-af5a-02f8546ccc91)
 ---
 Paso 6: Validar datos insertados
+
 Verifica que el registro se haya guardado:
 SELECT * FROM customer;
 ---
 ![image](https://github.com/user-attachments/assets/c363c816-0a28-4998-a811-dcab9dc8816f)
 ---
 Paso 7: Detener y eliminar el contenedor
+
 Detén el contenedor:
 docker stop server_db1
 ---
@@ -112,23 +117,29 @@ docker rm server_db1
 ![image](https://github.com/user-attachments/assets/40e64d48-c619-4105-8cc6-a8edc1b46921)
 ---
 Paso 8: Volver a crear el contenedor
+
 Repite el comando de creación, pero verifica que la base de datos test ya no existe, lo que demuestra que los datos no se han conservado.
 ---
 ![image](https://github.com/user-attachments/assets/a7db26cb-e791-46a4-b95e-ad92216236d6)
 ---
+
 Parte 2: Base de datos con volumen
+
 Paso 1: Crear un volumen
+
 docker volume create pgdata
 ---
 ![image](https://github.com/user-attachments/assets/c8de2412-7270-40d1-bd1b-4242d3cd3ae6)
 ---
 Paso 2: Crear el contenedor server_db2
+
 docker run --name server_db2 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -v pgdata:/var/lib/postgresql/data -d postgres
 ---
 ![image](https://github.com/user-attachments/assets/5dfc2c61-26d5-4574-9086-62498f902d4b)
 ---
 
 Paso 3: Crear la base de datos y tabla
+
 Repite los pasos de la parte 1 para:
 - Crear la base de datos test.
 ---
@@ -144,6 +155,7 @@ Repite los pasos de la parte 1 para:
 ![image](https://github.com/user-attachments/assets/1b8c1b8d-2be2-4b24-8ad2-86a721a9b0f1)
 ---
 Paso 4: Detener y eliminar el contenedor
+
 docker stop server_db2
 docker rm server_db2
 ---
@@ -152,6 +164,7 @@ docker rm server_db2
 ![image](https://github.com/user-attachments/assets/bbedfc6e-154d-475c-9fd2-3802d6d8c3bc)
 ---
 Paso 5: Volver a crear el contenedor con el volumen
+
 docker run --name server_db2 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -v pgdata:/var/lib/postgresql/data -d postgres
 ---
 ![image](https://github.com/user-attachments/assets/0f13c825-2860-4341-975a-6d72a80355dd)
@@ -159,6 +172,7 @@ docker run --name server_db2 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -
 ---
 
 Paso 6: Verificar persistencia de datos
+
 Confirma que la base de datos y los registros se mantuvieron:
 SELECT * FROM customer;
 ---
